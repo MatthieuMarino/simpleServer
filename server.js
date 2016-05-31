@@ -42,6 +42,10 @@ app.get('/styles/:name', function(req,res){
     res.sendFile('/home/ubuntu/build/styles/'+req.params['name']);
 });
 
+app.get('/fonts/:name', function(req,res){
+    res.sendFile('/home/ubuntu/build/fonts/'+req.params['name']);
+});
+
 app.get('/ping', function(req, res) {
     res.send("pong");
 });
