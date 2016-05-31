@@ -34,6 +34,14 @@ app.get('/', function(req,res){
     res.sendFile('/home/ubuntu/build/index.html');
 });
 
+app.get('/scripts/:name', function(req,res){
+    res.sendFile('/home/ubuntu/build/scripts/'+req.params['name']);
+});
+
+app.get('/styles/:name', function(req,res){
+    res.sendFile('/home/ubuntu/build/styles/'+req.params['name']);
+});
+
 app.get('/ping', function(req, res) {
     res.send("pong");
 });
