@@ -4,15 +4,11 @@
 var express = require('express');
 var http = require('http');
 
-var swig = require('swig');
-var swig = new swig.Swig();
-
-
 var app = express();
 
-var bodyParser = require('body-parser');
-app.use( bodyParser.json() );       // to support JSON-encoded bodies
-app.use(bodyParser.urlencoded());     // to support URL-encoded bodies
+// var bodyParser = require('body-parser');
+// app.use( bodyParser.json() );       // to support JSON-encoded bodies
+// app.use(bodyParser.urlencoded());     // to support URL-encoded bodies
 
 // app.use(function (req, res, next) {
 //     res.header("Access-Control-Allow-Origin", "*");
@@ -29,6 +25,8 @@ app.use(bodyParser.urlencoded());     // to support URL-encoded bodies
 
 var port = process.env.PORT || '3000';
 app.set('port', port);
+
+app.use(express.static('/home/ubuntu/build/'));
 
 app.get('/', function(req,res){
     res.sendFile('/home/ubuntu/build/index.html');
