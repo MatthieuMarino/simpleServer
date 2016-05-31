@@ -8,8 +8,6 @@ var swig = require('swig');
 var swig = new swig.Swig();
 
 
-var list = require('./listFilm.js');
-
 var app = express();
 
 var bodyParser = require('body-parser');
