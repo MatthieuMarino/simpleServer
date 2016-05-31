@@ -21,18 +21,17 @@ app.use(bodyParser.urlencoded());     // to support URL-encoded bodies
 //     next();
 // });
 
-//app.use(express.json());       // to support JSON-encoded bodies
-//app.use(express.urlencoded());
-app.set('views', '../build');
-app.engine('html', swig.renderFile);
-app.set('view engine', 'html');
+
+// app.set('views', '../build');
+// app.engine('html', swig.renderFile);
+// app.set('view engine', 'html');
 
 
 var port = process.env.PORT || '3000';
 app.set('port', port);
 
 app.get('/', function(req,res){
-    res.render('index.html');
+    res.sendFile('/home/ubuntu/build/index.html');
 });
 
 app.get('/ping', function(req, res) {
